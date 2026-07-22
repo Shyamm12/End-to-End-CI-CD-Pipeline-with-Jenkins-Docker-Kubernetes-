@@ -88,3 +88,138 @@ The objective of this project is to understand and implement an industry-standar
 | Linux (Ubuntu) | Server Environment |
 | kubectl | Kubernetes Command Line Tool |
 | Minikube | Local Kubernetes Cluster |
+
+## 🚀 End-to-End CI/CD Workflow
+
+### 1️⃣ Source Code Management
+- Developer writes code in Spring Boot.
+- Source code is pushed to GitHub repository.
+
+### 2️⃣ Continuous Integration using Jenkins
+- Jenkins monitors the GitHub repository.
+- Whenever a new commit is pushed, Jenkins automatically triggers the pipeline.
+
+### 3️⃣ Build Stage
+- Jenkins uses Maven to download dependencies.
+- The Spring Boot application is compiled.
+- Unit tests are executed.
+- A JAR file is generated.
+
+### 4️⃣ Code Quality Analysis
+- Jenkins performs static code analysis using SonarQube.
+- The project quality is validated before deployment.
+
+### 5️⃣ Docker Image Creation
+- Jenkins builds a Docker image using the Dockerfile.
+- The application is packaged into a container.
+
+### 6️⃣ Push Image to Docker Hub
+- The Docker image is tagged.
+- Jenkins pushes the image to Docker Hub.
+
+### 7️⃣ Update Kubernetes Manifest
+- Jenkins updates the Kubernetes deployment manifest with the latest Docker image tag.
+- The updated manifest is pushed back to GitHub.
+
+### 8️⃣ GitOps Deployment using Argo CD
+- Argo CD continuously monitors the GitHub repository.
+- Once a new commit is detected, Argo CD automatically synchronizes the Kubernetes cluster.
+
+### 9️⃣ Kubernetes Deployment
+- Kubernetes pulls the latest Docker image.
+- New pods are created.
+- Service exposes the application.
+
+### 🔟 Application Available
+- The Spring Boot application becomes available through the Kubernetes Service.
+
+## 📸 Project Screenshots
+
+### AWS EC2 Instance (Jenkins Server)
+![AWS EC2](screenshots/aws-ec2.png)
+
+---
+
+### Spring Boot Application Running Locally
+![Spring Boot Application](screenshots/application.png)
+
+---
+
+### Jenkins CI/CD Pipeline
+![Jenkins Pipeline](screenshots/jenkins-pipeline.png)
+
+---
+
+### SonarQube Code Quality Analysis
+![SonarQube](screenshots/sonarqube.png)
+
+---
+
+### Docker Image Published to Docker Hub
+![Docker Hub](screenshots/dockerhub.png)
+
+---
+
+### Argo CD Deployment Dashboard
+![Argo CD](screenshots/argocd.png)
+
+---
+
+### Kubernetes Deployment
+![Kubernetes](screenshots/kubernetes.png)
+
+---
+
+### Spring Boot Application Running on Kubernetes
+![Spring Boot on Kubernetes](screenshots/springboot-k8s.png)
+
+## ✨ Key Features
+
+- ✅ End-to-End CI/CD Pipeline Implementation
+- ✅ Automated Build using Jenkins
+- ✅ Maven Build & Dependency Management
+- ✅ Static Code Analysis with SonarQube
+- ✅ Docker Image Creation and Versioning
+- ✅ Docker Hub Integration
+- ✅ Automated Kubernetes Deployment
+- ✅ GitOps Workflow using Argo CD
+- ✅ Self-Healing Kubernetes Deployments
+- ✅ Continuous Synchronization with Git Repository
+- ✅ Spring Boot Microservice Deployment
+- ✅ High Availability using Multiple Kubernetes Pods
+
+## 📂 Project Directory Structure
+
+```
+End-to-End-CI-CD-Pipeline-with-Jenkins-Docker-Kubernetes
+│
+├── README.md
+├── screenshots/
+│
+├── application/
+│   ├── src/
+│   ├── pom.xml
+│   ├── Dockerfile
+│   └── Jenkinsfile
+│
+├── kubernetes/
+│   ├── deployment.yml
+│   └── service.yml
+│
+└── argocd/
+    └── application.yaml
+```
+
+### Description
+
+| File/Folder | Purpose |
+|-------------|---------|
+| **src/** | Spring Boot application source code |
+| **pom.xml** | Maven project configuration and dependencies |
+| **Dockerfile** | Builds the Docker image for the application |
+| **Jenkinsfile** | Defines the complete Jenkins CI/CD pipeline |
+| **deployment.yml** | Kubernetes Deployment manifest |
+| **service.yml** | Kubernetes Service manifest |
+| **application.yaml** | Argo CD Application manifest for GitOps deployment |
+| **screenshots/** | Project screenshots used in the README |
+
