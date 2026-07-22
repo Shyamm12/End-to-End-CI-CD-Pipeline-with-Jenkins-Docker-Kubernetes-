@@ -87,4 +87,4 @@ The objective of this project is to understand and implement an industry-standar
 | Spring Boot | Backend Application Framework |
 | Linux (Ubuntu) | Server Environment |
 | kubectl | Kubernetes Command Line Tool |
-| eksctl | Kubernetes Cluster Management Tool |
+| Minikube | Local Kubernetes Cluster |
