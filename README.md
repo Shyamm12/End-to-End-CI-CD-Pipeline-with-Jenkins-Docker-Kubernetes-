@@ -68,3 +68,23 @@ The objective of this project is to understand and implement an industry-standar
 7. Kubernetes deployment files stored in GitHub are monitored by Argo CD.
 8. Argo CD automatically synchronizes the Kubernetes cluster with the latest manifests.
 9. Spring Boot application is deployed successfully inside Kubernetes.
+
+## 🛠️ Technologies Used
+
+| Technology | Purpose |
+|------------|---------|
+| AWS EC2 | Hosted Jenkins Server |
+| Git | Version Control |
+| GitHub | Source Code Repository |
+| Jenkins | Continuous Integration & Continuous Delivery |
+| Maven | Build Automation Tool |
+| SonarQube | Static Code Quality Analysis |
+| Docker | Containerization |
+| Docker Hub | Container Image Registry |
+| Kubernetes (Minikube) | Container Orchestration |
+| Argo CD | GitOps Continuous Deployment |
+| Java 17 | Spring Boot Application Development |
+| Spring Boot | Backend Application Framework |
+| Linux (Ubuntu) | Server Environment |
+| kubectl | Kubernetes Command Line Tool |
+| eksctl | Kubernetes Cluster Management Tool |
