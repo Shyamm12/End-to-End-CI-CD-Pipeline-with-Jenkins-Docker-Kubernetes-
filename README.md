@@ -23,3 +23,48 @@ The objective of this project is to understand and implement an industry-standar
 - AWS EC2 (Jenkins Server)
 
 ---
+
+## 🏗️ Project Architecture
+
+```
+        Developer
+            │
+            ▼
+        GitHub Repository
+            │
+            ▼
+      Jenkins (AWS EC2)
+            │
+            ├────────────► Maven Build
+            │
+            ├────────────► SonarQube Analysis
+            │
+            ├────────────► Docker Build
+            │
+            └────────────► Push Docker Image
+                           │
+                           ▼
+                      Docker Hub
+                           │
+                           ▼
+                    Kubernetes Cluster
+                      (Minikube)
+                           ▲
+                           │
+                      Argo CD (GitOps)
+                           │
+                           ▼
+                Deploy Spring Boot Application
+```
+
+### Workflow
+
+1. Developer pushes code to GitHub.
+2. Jenkins automatically detects the changes.
+3. Maven builds the Spring Boot application.
+4. SonarQube performs static code quality analysis.
+5. Jenkins builds a Docker image.
+6. Docker image is pushed to Docker Hub.
+7. Kubernetes deployment files stored in GitHub are monitored by Argo CD.
+8. Argo CD automatically synchronizes the Kubernetes cluster with the latest manifests.
+9. Spring Boot application is deployed successfully inside Kubernetes.
