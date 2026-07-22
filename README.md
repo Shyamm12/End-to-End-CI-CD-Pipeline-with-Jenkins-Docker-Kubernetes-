@@ -165,11 +165,6 @@ The objective of this project is to understand and implement an industry-standar
 
 ---
 
-### Kubernetes Deployment
-![Kubernetes](screenshots/kubernetes.png)
-
----
-
 ### Spring Boot Application Running on Kubernetes
 ![Spring Boot on Kubernetes](screenshots/springboot-k8s.png)
 
