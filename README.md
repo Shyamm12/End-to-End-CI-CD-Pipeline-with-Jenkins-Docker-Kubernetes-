@@ -212,4 +212,4 @@ Through this project, I gained practical hands-on experience in:
 **Shyam S**
 
 - GitHub: https://github.com/Shyamm12
-- LinkedIn: 
+- LinkedIn: https://linkedin.com/in/shanmugapriyan12
